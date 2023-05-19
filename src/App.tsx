@@ -14,7 +14,7 @@ function App() {
       <AnimatedLine animateDelay={0.3} className="fixed top-[0%]"/>
       <FadeInDiv duration={0.5} delay={0.5}><Navbar className="mt-[24px]"/></FadeInDiv>
       <FadeInDiv duration={0.5} delay={0.7}><TextInput onTextChange={setInputText} initialText={inputText}/></FadeInDiv>
-      <FadeInDiv duration={0.3} delay={1}><QRCodeImage text={deferredInputText}/></FadeInDiv>
+      <FadeInDiv duration={0.5} delay={1}><QRCodeImage text={deferredInputText}/></FadeInDiv>
       <AnimatedLine animateDelay={0.4} className="fixed bottom-[0%]"/>
     </div>
   )
