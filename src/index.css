@@ -13,3 +13,9 @@ body,
   font-family: 'JetBrains Mono', monospace;
   background-color: #696D7D;
 }
+
+line {
+  stroke-width: 24px;
+  stroke-linecap: round;
+  fill: transparent;
+}
