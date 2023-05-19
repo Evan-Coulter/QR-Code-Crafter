@@ -1,6 +1,8 @@
 import QRCode from "react-qr-code";
 import { ErrorBoundary } from "react-error-boundary";
-
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import { useRef } from "react";
+import * as htmlToImage from 'html-to-image';
 
 type Props = {
     text: string
@@ -15,13 +17,29 @@ const ErrorFallback = () => {
 }
 
 const QRCodeImage = ({text}: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const downloadImage = async () => {
+    if (ref.current === null) {
+      return
+    }
+    const dataUrl = await htmlToImage.toPng(ref.current, { cacheBust: true, });
+    const link = document.createElement('a');
+    link.download = "QR_Code.png";
+    link.href = dataUrl;
+    link.click();
+  }
+
   return (
-    <section id='qr-code-image'>
-        <div className='bg-white p-16'>
+    <section id='qr-code-image' className="flex justify-between items-center space-y-4 mt-16 flex-col">
+        <div className='bg-white p-8 rounded-lg' id="ref" ref={ref}>
             <ErrorBoundary fallback={<ErrorFallback/>}>
-              <QRCode value={text} />
+              <QRCode value={text} className="w-[200px] h-[200px]"/>
             </ErrorBoundary>
         </div>
+        <a className="cursor-pointer p-4" onClick={downloadImage}>
+          {<ArrowDownTrayIcon className="h-20 w-20"/>}
+        </a>
     </section>
   )
 }

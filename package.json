@@ -13,6 +13,8 @@
     "@heroicons/react": "^2.0.18",
     "@types/node": "^20.2.0",
     "framer-motion": "^10.12.12",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.4",
