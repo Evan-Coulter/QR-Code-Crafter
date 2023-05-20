@@ -31,14 +31,14 @@ const QRCodeImage = ({text}: Props) => {
   }
 
   return (
-    <section id='qr-code-image' className="flex justify-between items-center space-y-4 mt-16 flex-col">
+    <section id='qr-code-image' className="flex justify-between items-center space-y-4 mt-8 flex-col">
         <div className='bg-white p-8 rounded-lg' id="ref" ref={ref}>
             <ErrorBoundary fallback={<ErrorFallback/>}>
-              <QRCode value={text} className="w-[200px] h-[200px]"/>
+              <QRCode value={text} className="w-[180px] h-[180px]"/>
             </ErrorBoundary>
         </div>
         <a className="cursor-pointer p-4" onClick={downloadImage}>
-          {<ArrowDownTrayIcon className="h-20 w-20"/>}
+          {<ArrowDownTrayIcon className="h-16 w-16"/>}
         </a>
     </section>
   )

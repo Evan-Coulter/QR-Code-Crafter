@@ -5,7 +5,7 @@ type Props = {
 
 const TextInput = ({onTextChange, initialText}: Props) => {
   return (
-    <section id="text-input" className="max-w-[70%] h-[100px] md:h-[200px] flex mx-auto mt-8"> 
+    <section id="text-input" className="max-w-[70%] h-[100px] md:h-[180px] flex mx-auto mt-8"> 
       <textarea 
         rows={1}
         name="qrCodeInput" 
